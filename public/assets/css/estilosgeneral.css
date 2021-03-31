@@ -1,0 +1,67 @@
+body {
+    background-image: url("../img/fondos/wave1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.btn-orange {
+    background-color: orange !important;
+    color: white;
+}
+
+.btn-orange:hover {
+    background-color: darkorange !important;
+    color: whitesmoke;
+}
+
+.btn-orange:active {
+    background-color: #ffb326 !important;
+    color: lightgray;
+}
+
+.text-dorange {
+    color: darkorange;
+}
+
+.logo-sena-large {
+    height: 250px;
+    width: auto;
+}
+
+.logo-sena-medium {
+    height: 170px;
+    width: auto;
+}
+
+.logo-sena-smallium {
+    height: 110px;
+    width: auto;
+}
+
+.logo-sena-small {
+    height: 70px;
+    width: auto;
+}
+
+.cam {
+    background-color: black;
+    height: 150px;
+    width: auto;
+}
+
+.no-resize-textarea:read-only {
+    background-color: white;
+    resize: none;
+}
+
+.btn-circle {
+    border-radius: 50%;
+}
+
+.text-small {
+    font-size: 8px;
+}
+
+.w-90 {
+    width: 90%;
+}

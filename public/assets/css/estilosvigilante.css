@@ -1,0 +1,25 @@
+body {
+    background-image: url("../img/fondos/orangewaves.jpg");
+}
+
+.btn-check {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80%;
+}
+
+.btn-check.out {
+    background-image: url("../img/logos/checkout.png");
+}
+
+.btn-check.in {
+    background-image: url("../img/logos/checkin.png");
+}
+
+.h-40 {
+    height: 40%;
+}
+
+.h-65 {
+    height: 65%;
+}

@@ -1,0 +1,14 @@
+body {
+    background-image: url("../img/fondos/wave2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.ocultar {
+    visibility: hidden;
+    display: none;
+}
+
+li > a, .sidebar-footer > a {
+    cursor: pointer;
+}
