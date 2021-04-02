@@ -12,3 +12,7 @@ body {
 li > a, .sidebar-footer > a {
     cursor: pointer;
 }
+
+.pages {
+    overflow-x: auto;
+}

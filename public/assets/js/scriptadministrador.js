@@ -8,7 +8,7 @@ $(document).ready(function () {
     $('#fecha-inicio').val(hoyString).attr('max', hoyString);
     $('#fecha-final').val(hoyString).attr({ 'max': hoyString, 'min': hoyString });
 
-    cargarAdministradores();
+    // cargarAdministradores();
 });
 
 function validarContrasenasAdmin(esRegistrar) {

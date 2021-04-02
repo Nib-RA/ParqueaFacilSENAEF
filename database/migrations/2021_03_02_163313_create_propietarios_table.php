@@ -21,7 +21,7 @@ class CreatePropietariosTable extends Migration
             $table->string("direccion", 150);
             $table->string("telefono", 25)->nullable();
             $table->string("correo", 50)->nullable();
-            $table->dateTime("fecha_nacimiento");
+            $table->date("fecha_nacimiento");
             $table->char("genero");
             $table->string("cargo", 20);
             $table->string("tipo_licencia", 5);

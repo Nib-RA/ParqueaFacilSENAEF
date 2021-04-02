@@ -10,12 +10,13 @@
     <title>Administra Parquea Fácil</title>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
-    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/sidenav.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/estilosadministrador.css">
 </head>
 
 <body>
+    <?php use App\Http\Controllers\AdministradorController ?>
     <div class="page-wrapper chiller-theme toggled">
         <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
             <i class="fas fa-bars"></i>
@@ -74,6 +75,22 @@
                         <li class="header-menu">
                             <span>Extra</span>
                         </li>
+                        <li class="sidebar-dropdown">
+                            <a href="#">
+                                <i class="fa fa-table"></i>
+                                <span>Mostrar</span>
+                            </a>
+                            <div class="sidebar-submenu">
+                                <ul>
+                                    <li>
+                                        <a id="activar-mostrar-propietarios" href="{{ action([AdministradorController::class, 'mostrarPropietarios']) }}">Propietarios</a>
+                                    </li>
+                                    <li>
+                                        <a id="activar-mostrar-vehiculos">Vehiculos</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
                         <li>
                             <a id="activar-consultar">
                                 <i class="fa fa-search"></i>
@@ -113,6 +130,7 @@
         <main class="page-content">
             <div class="container-fluid">
                 <div class="container px-5">
+                    @yield('contenido')
                     <!--Sección consultar-->
                     <div class="pages ocultar" id="consultar">
                         <div class="row">
@@ -352,8 +370,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
     <script src="/assets/js/sidenav.js"></script>
-    <!--<script src="/assets/js/scriptgeneral.js"></script>
-    <script src="/assets/js/scriptadministrador.js"></script>-->
+    <script src="/assets/js/scriptgeneral.js"></script>
+    <script src="/assets/js/scriptadministrador.js"></script>
 
 </body>
 

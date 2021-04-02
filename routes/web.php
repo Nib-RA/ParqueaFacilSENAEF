@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\AdministradorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,9 +17,9 @@ use App\Http\Controllers\LoginController;
 
 Route::get('/', LoginController::class);
 
-Route::get('admin', function () {
-    return view('administrador.administradorindex');
-});
+Route::get('admin', AdministradorController::class);
+
+Route::get('admin/mostrarPropietarios', [AdministradorController::class, 'mostrarPropietarios']);
 
 Route::get('vigi', function () {
     return view('vigilante.vigilanteindex');
