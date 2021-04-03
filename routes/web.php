@@ -21,6 +21,8 @@ Route::get('admin', AdministradorController::class);
 
 Route::get('admin/mostrarPropietarios', [AdministradorController::class, 'mostrarPropietarios']);
 
+Route::get('admin/mostrarVehiculos', [AdministradorController::class, 'mostrarVehiculos']);
+
 Route::get('vigi', function () {
     return view('vigilante.vigilanteindex');
 });

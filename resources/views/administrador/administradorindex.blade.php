@@ -48,7 +48,7 @@
                 </div>
                 <!-- sidebar-header  -->
                 <div class="sidebar-search">
-                    
+
                 </div>
                 <!-- sidebar-search  -->
                 <div class="sidebar-menu">
@@ -86,7 +86,7 @@
                                         <a id="activar-mostrar-propietarios" href="{{ action([AdministradorController::class, 'mostrarPropietarios']) }}">Propietarios</a>
                                     </li>
                                     <li>
-                                        <a id="activar-mostrar-vehiculos">Vehiculos</a>
+                                        <a id="activar-mostrar-vehiculos" href="{{ action([AdministradorController::class, 'mostrarVehiculos']) }}">Vehiculos</a>
                                     </li>
                                 </ul>
                             </div>
