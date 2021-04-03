@@ -6,6 +6,7 @@ use App\Models\Administrador;
 use Illuminate\Http\Request;
 use App\Models\Propietario;
 use App\Models\Vehiculo;
+use App\Models\Vigilante;
 
 class AdministradorController extends Controller
 {
@@ -24,5 +25,11 @@ class AdministradorController extends Controller
     {
         $vehiculos = Vehiculo::all();
         return view('administrador.mostrarVehiculos')->with('vehiculos', $vehiculos);
+    }
+
+    public function mostrarVigilantes()
+    {
+        $vigilantes = Vigilante::all();
+        return view('administrador.mostrarVigilantes')->with('vigilantes', $vigilantes);
     }
 }
