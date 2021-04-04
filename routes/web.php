@@ -27,6 +27,8 @@ Route::get('admin/mostrarVigilantes', [AdministradorController::class, 'mostrarV
 
 Route::get('admin/mostrarNovedades', [AdministradorController::class, 'mostrarNovedades']);
 
+Route::get('admin/mostrarAdministradores', [AdministradorController::class, 'mostrarAdministradores']);
+
 Route::get('vigi', function () {
     return view('vigilante.vigilanteindex');
 });

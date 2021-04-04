@@ -1,10 +1,10 @@
 @extends ('administrador.administradorindex')
 
 @section('contenido')
-    <div class="pages" id="novedades">
+    <div class="pages" id="mostrar-administradores">
         <div class="row">
             <div class="col">
-                <h1 class="text-center">Visualización de novedades</h1>
+                <h1 class="text-center">Visualización de administradores</h1>
             </div>
         </div>
         <div class="row pt-5">
@@ -14,19 +14,19 @@
                         <table class="table table-hover">
                             <thead class="thead-dark">
                                 <tr>
-                                    <th>Id</th>
-                                    <th>Tipo</th>
-                                    <th>Descripción</th>
-                                    <th>Número Ticket Reg</th>
+                                    <th>Documento</th>
+                                    <th>Nombres</th>
+                                    <th>Cargo</th>
+                                    <th>Contraseña</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($novedades as $novedad)
+                                @foreach ($administradores as $administrador)
                                     <tr>
-                                        <td>{{$novedad->id}}</td>
-                                        <td>{{$novedad->tipo}}</td>
-                                        <td>{{$novedad->descripcion}}</td>
-                                        <td>{{$novedad->numero_ticket_reg}}</td>
+                                        <td>{{$administrador->documento}}</td>
+                                        <td>{{$administrador->nombres}}</td>
+                                        <td>{{$administrador->cargo}}</td>
+                                        <td>{{$administrador->contrasena}}</td>
                                     </tr>
                                 @endforeach
                             </tbody>

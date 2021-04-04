@@ -94,6 +94,9 @@
                                     <li>
                                         <a id="activar-mostrar-novedad" href="{{ action([AdministradorController::class, 'mostrarNovedades']) }}">Vigilantes</a>
                                     </li>
+                                    <li>
+                                        <a id="mostrar-administradores" href="{{ action([AdministradorController::class, 'mostrarAdministradores']) }}">Administradores</a>
+                                    </li>
                                 </ul>
                             </div>
                         </li>

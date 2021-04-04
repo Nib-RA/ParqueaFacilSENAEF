@@ -16,6 +16,12 @@ class AdministradorController extends Controller
         return view('administrador.administradorindex');
     }
 
+    public function mostrarAdministradores()
+    {
+        $administradores = Administrador::all();
+        return view('administrador.mostrarAdministradores')->with('administradores', $administradores);
+    }
+
     public function mostrarPropietarios()
     {
         $propietarios = Propietario::all();
