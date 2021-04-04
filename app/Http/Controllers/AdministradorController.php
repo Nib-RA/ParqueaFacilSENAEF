@@ -32,4 +32,10 @@ class AdministradorController extends Controller
         $vigilantes = Vigilante::all();
         return view('administrador.mostrarVigilantes')->with('vigilantes', $vigilantes);
     }
+
+    public function mostrarNovedades()
+    {
+        $novedades = Novedad::all();
+        return view('administrador.mostrarNovedades')->with('novedades', $novedades);
+    }
 }
