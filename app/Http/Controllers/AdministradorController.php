@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Propietario;
 use App\Models\Vehiculo;
 use App\Models\Vigilante;
+use App\Models\Novedad;
 
 class AdministradorController extends Controller
 {

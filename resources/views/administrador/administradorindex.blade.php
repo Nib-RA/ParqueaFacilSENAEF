@@ -89,7 +89,10 @@
                                         <a id="activar-mostrar-vehiculos" href="{{ action([AdministradorController::class, 'mostrarVehiculos']) }}">Vehiculos</a>
                                     </li>
                                     <li>
-                                        <a id="activar-vigilante" href="{{ action([AdministradorController::class, 'mostrarVigilantes']) }}">Vigilantes</a>
+                                        <a id="activar-mostrar-vigilante" href="{{ action([AdministradorController::class, 'mostrarVigilantes']) }}">Vigilantes</a>
+                                    </li>
+                                    <li>
+                                        <a id="activar-mostrar-novedad" href="{{ action([AdministradorController::class, 'mostrarNovedades']) }}">Vigilantes</a>
                                     </li>
                                 </ul>
                             </div>
