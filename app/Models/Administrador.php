@@ -8,4 +8,19 @@ use Illuminate\Database\Eloquent\Model;
 class Administrador extends Model
 {
     use HasFactory;
+
+    protected $table = 'administradors';
+    protected $primaryKey = 'documento';
+    //public $timestamps = false;
+
+    protected $casts = [
+        'documento' => 'integer'
+    ];
+
+    protected $fillable = [
+        'documento',
+        'nombres',
+        'cargo',
+        'contrasena'
+    ];
 }

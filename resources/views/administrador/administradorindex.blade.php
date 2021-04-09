@@ -10,7 +10,8 @@
     <title>Administra Parquea Fácil</title>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
+    <!--<link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
     <link rel="stylesheet" type="text/css" href="/assets/css/sidenav.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/estilosadministrador.css">
 </head>
@@ -64,41 +65,25 @@
                             <div class="sidebar-submenu">
                                 <ul>
                                     <li>
-                                        <a id="activar-administrador">Administrador</a>
+                                        <a id="mostrar-administradores" href="{{ route('administradors.index') }}">Administradores</a>
                                     </li>
                                     <li>
-                                        <a id="activar-vigilante">Vigilante</a>
+                                        <a id="activar-mostrar-vigilante" href="">Vigilantes</a>
+                                    </li>
+                                    <li>
+                                        <a id="activar-mostrar-propietarios" href="{{ route('propietarios.index') }}">Propietarios</a>
+                                    </li>
+                                    <li>
+                                        <a id="activar-mostrar-vehiculos" href="">Vehiculos</a>
+                                    </li>
+                                    <li>
+                                        <a id="activar-mostrar-novedad" href="">Novedades</a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
                         <li class="header-menu">
                             <span>Extra</span>
-                        </li>
-                        <li class="sidebar-dropdown">
-                            <a href="#">
-                                <i class="fa fa-table"></i>
-                                <span>Mostrar</span>
-                            </a>
-                            <div class="sidebar-submenu">
-                                <ul>
-                                    <li>
-                                        <a id="activar-mostrar-propietarios" href="{{ action([AdministradorController::class, 'mostrarPropietarios']) }}">Propietarios</a>
-                                    </li>
-                                    <li>
-                                        <a id="activar-mostrar-vehiculos" href="{{ action([AdministradorController::class, 'mostrarVehiculos']) }}">Vehiculos</a>
-                                    </li>
-                                    <li>
-                                        <a id="activar-mostrar-vigilante" href="{{ action([AdministradorController::class, 'mostrarVigilantes']) }}">Vigilantes</a>
-                                    </li>
-                                    <li>
-                                        <a id="activar-mostrar-novedad" href="{{ action([AdministradorController::class, 'mostrarNovedades']) }}">Vigilantes</a>
-                                    </li>
-                                    <li>
-                                        <a id="mostrar-administradores" href="{{ action([AdministradorController::class, 'mostrarAdministradores']) }}">Administradores</a>
-                                    </li>
-                                </ul>
-                            </div>
                         </li>
                         <li>
                             <a id="activar-consultar">
@@ -139,6 +124,7 @@
         <main class="page-content">
             <div class="container-fluid">
                 <div class="container px-5">
+                    @show
                     @yield('contenido')
                     <!--Sección consultar-->
                     <div class="pages ocultar" id="consultar">
@@ -378,6 +364,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" integrity="sha512-RXf+QSDCUQs5uwRKaDoXt55jygZZm2V++WUZduaU/Ui/9EGp3f/2KZVahFZBKGH0s774sd3HmrhUy+SgOFQLVQ==" crossorigin="anonymous"></script>
     <script src="/assets/js/sidenav.js"></script>
     <script src="/assets/js/scriptgeneral.js"></script>
     <script src="/assets/js/scriptadministrador.js"></script>

@@ -16,3 +16,18 @@ li > a, .sidebar-footer > a {
 .pages {
     overflow-x: auto;
 }
+
+td.width {
+    width: 110px !important;
+    display: inline-block !important;
+}
+
+.eliminar {
+    border: none;
+    background-color:transparent;
+    padding: 0;
+}
+
+.eliminar:focus {
+    outline: 0;
+}

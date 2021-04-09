@@ -4,10 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Administrador;
 use Illuminate\Http\Request;
-use App\Models\Propietario;
-use App\Models\Vehiculo;
-use App\Models\Vigilante;
-use App\Models\Novedad;
 
 class AdministradorController extends Controller
 {
@@ -16,33 +12,105 @@ class AdministradorController extends Controller
         return view('administrador.administradorindex');
     }
 
-    public function mostrarAdministradores()
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
     {
-        $administradores = Administrador::all();
-        return view('administrador.mostrarAdministradores')->with('administradores', $administradores);
+        $administradores = Administrador::paginate(5);
+
+        return view('administrador.index', compact('administradores'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
-    public function mostrarPropietarios()
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
     {
-        $propietarios = Propietario::all();
-        return view('administrador.mostrarPropietarios')->with('propietarios', $propietarios);
+        return view('administrador.create');
     }
 
-    public function mostrarVehiculos()
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
     {
-        $vehiculos = Vehiculo::all();
-        return view('administrador.mostrarVehiculos')->with('vehiculos', $vehiculos);
+        $request->validate([
+            'documento' => 'required',
+            'nombres' => 'required',
+            'cargo' => 'required',
+            'contrasena' => 'required'
+        ]);
+
+        Administrador::create($request->all());
+
+        return redirect()->route('administradors.index')
+            ->with('success', 'Administrador creado satisfactoriamente.');
     }
 
-    public function mostrarVigilantes()
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Administrador  $administrador
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Administrador $administrador)
     {
-        $vigilantes = Vigilante::all();
-        return view('administrador.mostrarVigilantes')->with('vigilantes', $vigilantes);
+        return view('administrador.show', compact('administrador'));
     }
 
-    public function mostrarNovedades()
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Administrador  $administrador
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Administrador $administrador)
     {
-        $novedades = Novedad::all();
-        return view('administrador.mostrarNovedades')->with('novedades', $novedades);
+        return view('administrador.edit', compact('administrador'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Administrador  $administrador
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Administrador $administrador)
+    {
+        $request->validate([
+            'documento' => 'required',
+            'nombres' => 'required',
+            'cargo' => 'required',
+            'contrasena' => 'required'
+        ]);
+
+        $administrador->update($request->all());
+
+        return redirect()->route('administradors.index')
+            ->with('success', 'Administrador actualizado satisfactoriamente.');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\Administrador  $administrador
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Administrador $administrador)
+    {
+        $administrador->delete();
+
+        return redirect()->route('administradors.index')
+            ->with('success', 'Administrador eliminado correctamente');
     }
 }

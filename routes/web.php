@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AdministradorController;
+use App\Http\Controllers\PropietarioController;
+use App\Http\Controllers\VehiculoController;
+use App\Http\Controllers\VigilanteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,15 +22,13 @@ Route::get('/', LoginController::class);
 
 Route::get('admin', AdministradorController::class);
 
-Route::get('admin/mostrarPropietarios', [AdministradorController::class, 'mostrarPropietarios']);
+Route::resource('admin/administradors', AdministradorController::class);
 
-Route::get('admin/mostrarVehiculos', [AdministradorController::class, 'mostrarVehiculos']);
+Route::resource('admin/vigilantes', VigilanteController::class);
 
-Route::get('admin/mostrarVigilantes', [AdministradorController::class, 'mostrarVigilantes']);
+Route::resource('admin/propietarios', PropietarioController::class);
 
-Route::get('admin/mostrarNovedades', [AdministradorController::class, 'mostrarNovedades']);
-
-Route::get('admin/mostrarAdministradores', [AdministradorController::class, 'mostrarAdministradores']);
+Route::resource('admin/vehiculos', VehiculoController::class);
 
 Route::get('vigi', function () {
     return view('vigilante.vigilanteindex');
