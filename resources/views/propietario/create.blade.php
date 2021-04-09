@@ -30,18 +30,18 @@
         <div class="row">
             <div class="col">
                 <div class="form-group">
+                    <strong>Documento:</strong>
+                    <input type="number" name="documento" class="form-control" placeholder="Documento">
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
                     <strong>Tipo documento:</strong>
                     <select name="tipo_documento" class="form-control">
                         <option value="ti">Tarjeta de identidad</option>
                         <option value="cc">Cédula de ciudadanía</option>
                         <option value="ce">Cédula de extranjería</option>
                     </select>
-                </div>
-            </div>
-            <div class="col">
-                <div class="form-group">
-                    <strong>Documento:</strong>
-                    <input type="number" name="documento" class="form-control" placeholder="Documento">
                 </div>
             </div>
         </div>

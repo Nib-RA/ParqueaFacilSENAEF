@@ -19,7 +19,7 @@
             <strong>Error!</strong>
             <ul>
                 @foreach ($errors->all() as $error)
-                    <li></li>
+                    <li>{{ $error }}</li>
                 @endforeach
             </ul>
         </div>
@@ -32,18 +32,18 @@
         <div class="row">
             <div class="col">
                 <div class="form-group">
-                    <strong>Tipo documento:</strong>
-                    <select name="tipo_documento" class="form-control" disabled>
-                        <option value="ti" {{ $selectTipo = $propietario->tipo_documento == "ti" ? 'selected' : ''}}>Tarjeta de identidad</option>
-                        <option value="cc" {{ $selectTipo = $propietario->tipo_documento == "cc" ? 'selected' : ''}}>Cédula de ciudadanía</option>
-                        <option value="ce" {{ $selectTipo = $propietario->tipo_documento == "ce" ? 'selected' : ''}}>Cédula de extranjería</option>
-                    </select>
+                    <strong>Documento:</strong>
+                    <input type="number" name="documento" class="form-control" value="{{ $propietario->documento }}" placeholder="Documento" readonly>
                 </div>
             </div>
             <div class="col">
                 <div class="form-group">
-                    <strong>Documento:</strong>
-                    <input type="number" name="documento" class="form-control" value="{{ $propietario->documento }}" placeholder="Documento" disabled>
+                    <strong>Tipo documento:</strong>
+                    <select name="tipo_documento" class="form-control">
+                        <option value="ti" {{ $selectTipo = $propietario->tipo_documento == "ti" ? 'selected' : ''}}>Tarjeta de identidad</option>
+                        <option value="cc" {{ $selectTipo = $propietario->tipo_documento == "cc" ? 'selected' : ''}}>Cédula de ciudadanía</option>
+                        <option value="ce" {{ $selectTipo = $propietario->tipo_documento == "ce" ? 'selected' : ''}}>Cédula de extranjería</option>
+                    </select>
                 </div>
             </div>
         </div>
