@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Hash;
 
 class Vigilante extends Model
 {
@@ -30,4 +31,9 @@ class Vigilante extends Model
         'contrasena',
         'documento_adm'
     ];
+
+    public function encrypt ($contrasena)
+    {
+        return Hash::make($contrasena);;
+    }
 }
