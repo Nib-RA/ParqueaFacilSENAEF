@@ -11,10 +11,14 @@ class Administrador extends Model
 
     protected $table = 'administradors';
     protected $primaryKey = 'documento';
-    //public $timestamps = false;
+    public $timestamps = false;
 
     protected $casts = [
         'documento' => 'integer'
+    ];
+
+    protected $hidden = [
+        'contrasena'
     ];
 
     protected $fillable = [

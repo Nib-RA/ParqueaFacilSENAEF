@@ -11,11 +11,15 @@ class Vigilante extends Model
 
     protected $table = 'vigilante';
     protected $primaryKey = 'documento';
-    //public $timestamps = false;
+    public $timestamps = false;
 
     protected $casts = [
         'documento' => 'integer',
         'documento_adm' => 'integer'
+    ];
+
+    protected $hidden = [
+        'contrasena'
     ];
 
     protected $fillable = [

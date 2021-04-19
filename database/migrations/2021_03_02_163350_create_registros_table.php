@@ -18,9 +18,9 @@ class CreateRegistrosTable extends Migration
             $table->dateTime("fecha_ingreso");
             $table->dateTime("fecha_salida");
             $table->boolean("estado");
-            $table->string("placa_veh", 7);
+            $table->bigInteger("id_cond_veh")->unsigned();
             $table->integer("documento_vig")->unsigned();
-            $table->foreign("placa_veh")->references("placa")->on("vehiculos");
+            $table->foreign("id_cond_veh")->references("id")->on("conductor_vehiculos");
             $table->foreign("documento_vig")->references("documento")->on("vigilantes");
         });
     }
