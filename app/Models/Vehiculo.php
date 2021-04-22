@@ -11,7 +11,7 @@ class Vehiculo extends Model
 
     protected $table = 'vehiculos';
     protected $primaryKey = 'placa';
-    //public $timestamps = false;
+    public $timestamps = false;
 
     protected $casts = [
         'modelo' => 'integer',
@@ -30,7 +30,6 @@ class Vehiculo extends Model
         'chasis',
         'motor',
         'color',
-        'tipo_carroceria',
-        'documento_pro'
+        'tipo_carroceria'
     ];
 }

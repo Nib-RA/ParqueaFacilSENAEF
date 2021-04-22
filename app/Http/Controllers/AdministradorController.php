@@ -113,4 +113,5 @@ class AdministradorController extends Controller
         return redirect()->route('administradors.index')
             ->with('success', 'Administrador eliminado correctamente');
     }
+    
 }

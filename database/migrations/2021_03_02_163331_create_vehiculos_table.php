@@ -25,8 +25,6 @@ class CreateVehiculosTable extends Migration
             $table->string("motor", 20)->nullable();
             $table->string("color", 25);
             $table->string("tipo_carroceria", 20)->nullable();
-            $table->integer("documento_pro")->unsigned();
-            $table->foreign("documento_pro")->references("documento")->on("propietarios");
         });
     }
 
