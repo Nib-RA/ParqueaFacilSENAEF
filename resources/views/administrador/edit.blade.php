@@ -19,7 +19,7 @@
             <strong>Error!</strong>
             <ul>
                 @foreach ($errors->all() as $error)
-                    <li></li>
+                    <li>{{ $error }}</li>
                 @endforeach
             </ul>
         </div>
@@ -33,7 +33,7 @@
             <div class="col">
                 <div class="form-group">
                     <strong>Documento:</strong>
-                    <input type="number" name="documento" class="form-control" value="{{ $administrador->documento }}" placeholder="Documento" disabled>
+                    <input type="number" name="documento" class="form-control" value="{{ $administrador->documento }}" placeholder="Documento" readonly>
                 </div>
             </div>
             <div class="col">
