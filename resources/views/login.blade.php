@@ -60,7 +60,7 @@
                 </div>
             </div>
             <div class="col-3">
-                <img class="logo-sena-large" src="/assets/img/logos/senalogo.png" alt="sena logo">
+                <img class="logo-sena-large" src="\assets\img\logos\senalogo.png" alt="sena logo">
             </div>
         </div>
     </div>

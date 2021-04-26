@@ -19,7 +19,7 @@
             <p>{{ $message }}</p>
         </div>
     @endif
-    
+
     <div class="pages">
         <table class="table table-bordered table-responsive-lg">
             <tr>
